@@ -16,7 +16,7 @@
         <link rel="prev" href="../metadata/">
       
       
-        <link rel="next" href="../sources/">
+        <link rel="next" href="../psql/">
       
       
         
@@ -248,6 +248,25 @@
   
   
     <li class="md-tabs__item">
+      <a href="../cli/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Cli
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../interop/" class="md-tabs__link">
         
   
@@ -295,6 +314,25 @@
     
   
   🌍 OGR/GDAL
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../psql/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Psql
 
       </a>
     </li>
@@ -440,6 +478,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../cli/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cli
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../interop/" class="md-nav__link">
         
   
@@ -562,6 +627,23 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="1. Connexion à une BD PostgreSQL en CLI">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gerer-une-instance-postgresql-dans-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gérer une instance PostgreSQL dans linux
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -668,6 +750,33 @@
   
   
     <li class="md-nav__item">
+      <a href="../psql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Psql
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../sources/" class="md-nav__link">
         
   
@@ -737,13 +846,34 @@
 <h2 id="1-connexion-a-une-bd-postgresql-en-cli">1. Connexion à une BD PostgreSQL en CLI<a class="headerlink" href="#1-connexion-a-une-bd-postgresql-en-cli" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code>psql<span class="w"> </span>-h<span class="w"> </span><span class="m">192</span>.168.10.1<span class="w"> </span>-p<span class="w"> </span><span class="m">15432</span><span class="w"> </span>-U<span class="w"> </span>editeur<span class="w"> </span>-d<span class="w"> </span>lucas
 
-<span class="se">\d</span><span class="w"> </span><span class="c1"># Lister le contenu de la BD</span>
+<span class="se">\d</span><span class="w"> </span><span class="c1"># Lister le contenu de la BD </span>
+
+<span class="se">\d</span><span class="w"> </span>nom_table<span class="w"> </span><span class="c1"># Afficher les colonnes d&#39;une tables</span>
 
 <span class="se">\d</span>t<span class="w"> </span>*.*<span class="w"> </span><span class="c1"># Lister toutes les tables de tous les schémas</span>
 
 <span class="se">\d</span>t<span class="w"> </span>tg.*<span class="w"> </span><span class="c1"># Lister toutes les tables du schéma &#39;tg&#39;</span>
 
+<span class="se">\d</span>n<span class="w"> </span><span class="c1"># Lister tous les schémas (sans les ta\ dtbles)</span>
+
 <span class="se">\q</span><span class="w"> </span><span class="c1"># Quit psql cli client</span>
+
+<span class="se">\l</span><span class="w"> </span><span class="c1"># liste TOUTES LES BD avec info (tablespaces etc)</span>
+
+<span class="se">\d</span>u<span class="w"> </span><span class="c1"># lister les utilisateurs</span>
+
+<span class="se">\c</span><span class="w"> </span>ma_base<span class="w"> </span><span class="c1"># se connecter à une BD spécifique du serveur</span>
+</code></pre></div>
+<h3 id="gerer-une-instance-postgresql-dans-linux">Gérer une instance PostgreSQL dans linux<a class="headerlink" href="#gerer-une-instance-postgresql-dans-linux" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>sudo<span class="w"> </span>apt<span class="w"> </span>installe<span class="w"> </span>postgresql
+
+sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>postgresql.service
+
+sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>postgresql.service
+
+sudo<span class="w"> </span>systemctl<span class="w"> </span>status<span class="w"> </span>postgresql.service
+
+psql<span class="w"> </span>postgres<span class="w"> </span>postgres<span class="w"> </span>-p<span class="w"> </span><span class="m">5432</span>
 </code></pre></div>
 <p>&rArr; <a href="https://docs.postgresql.fr/13/app-psql.html">Doc psql</a></p>
 <hr />
