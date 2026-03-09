@@ -1,0 +1,79 @@
+site_name: "Géo-Matrix"
+site_description: "Documentation géomatique"
+site_author: "geomagus"
+
+theme:
+  name: material
+  language: fr
+  logo: assets/matrice.png  
+
+  palette:
+    # Mode clair élégant
+    - scheme: default
+      primary: teal
+      accent: light-green
+      toggle:
+        icon: material/weather-night
+        name: Activer le mode sombre
+
+    # Mode sombre esthétique
+    - scheme: slate
+      primary: green
+      accent: lime
+      toggle:
+        icon: material/weather-sunny
+        name: Activer le mode clair
+
+
+
+
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.top
+    - navigation.instant
+    - navigation.expand
+    - content.code.copy
+    - content.code.annotate
+    - toc.integrate
+    - search.highlight
+    - search.suggest
+
+plugins:
+  - search
+  - awesome-pages
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - attr_list
+  - def_list
+  - tables
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra_css:
+  - stylesheets/extra.css
+
+extra:
+  footer:
+    html: "Créé avec ❤ par <a href='https://github.com/luc4rto'>Luc4rto</a> - Thème : <a href='https://materialforMkDocs.com'>Material for MkDocs</a>"
+
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/luc4rto
+      name: Luc4rto
